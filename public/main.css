@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body {
+  margin: 0;
+  height: 100vh;
+  min-height: 400px;
+  background: linear-gradient(to right, #fff 50%, #000 50%) no-repeat;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: bold;
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Holtwood One SC', serif;
+  font-size: calc(2vw + 0.9rem);
+  background: linear-gradient(to right, #000 50%, #fff 50%) no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 1rem;
+}
+
+.main-content {
+  display: flex;
+  height: 100%;
+}
+
+.input,
+.output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+.input {
+  background-color: #fff;
+}
+
+form,
+.result {
+  width: 300px;
+  margin: 0 1rem 8rem;
+}
+
+form>* {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form label,
+p {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+form input {
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+.output {
+  background-color: #000;
+  color: #fff;
+}
+
+.output-field-wrapper {
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  overflow-x: auto;
+  height: 31px;
+  overflow-y: hidden;
+}
+
+.output-field {
+  white-space: nowrap;
+  transform: translateX(-300px) scale(1);
+  transition: transform 0.1s ease;
+}
+
+.coded-by {
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #000 50%, #fff 50%) no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coded-by a {
+  color: inherit;
+  text-decoration-color: #000;
+}
+
+/***** Animation *****/
+
+@keyframes highlight {
+  10% {
+    background-color: red;
+  }
+
+  30% {
+    background-color: black;
+  }
+
+  50% {
+    background-color: red;
+  }
+
+  70% {
+    background-color: black;
+  }
+
+  90% {
+    background-color: red;
+  }
+}
+
+/***** JS classes *****/
+
+.slide-in {
+  transform: translateX(0);
+}
+
+.scale-out {
+  transform: scale(0);
+}
+
+.highlight-error {
+  animation-name: highlight;
+  animation-duration: 0.4s;
+}
+
+/***** Media *****/
+
+@media(max-width: 670px) {
+
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #fff 50%, #000 50%) no-repeat;
+  }
+
+  h1 {
+    background: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  form,
+  .result {
+    margin: 0;
+  }
+
+  .coded-by {
+    background: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: #fff;
+  }
+
+  .coded-by a {
+    text-decoration-color: #fff;
+  }
+
+  .output-field-wrapper {
+    height: 24px;
+  }
+}
